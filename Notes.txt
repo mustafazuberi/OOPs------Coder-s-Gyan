@@ -1,0 +1,157 @@
+ProtoTypes
+
+jab hum new construntorName() sa object bna rehe hain tw this us variable ko point kr raha h jis me object hai 
+or constructor me jo methods hain woh memory har object ke andar le rahe hain
+humain kuch aesa krna hoga sara objects jis bhe constructor sa bane woh un constructor ke methods ko use kr payee 
+or iske lye hum prototypes use krty hain  
+
+
+Arrow function me agar this karte hain tw woh outer scope sa leta h 
+
+
+
+
+
+
+hum prototype me jo bh function add krenge 
+woh constructor se create hone wale object me as a method use kr sakte hain 
+sab sa phly wo object ki properties me dekha ga 
+function BankAccount({ customerName, balance = 0 }) {
+    this.customerName = customerName;
+    this.accountNumber = Date.now();
+    this.balance = balance;
+  }
+BankAccount.prototype.deposit = function (amount) {
+    this.balance = amount
+}
+
+const mustafaAccount = new BankAccount({customerName:'Mustafa'})
+
+mustafaAccount.deposit(2000)
+
+
+idhr deposit ko call kr rahe hain tw woh sab sa phle object ki properties me jaiga 
+agar waha na mila tw prototypes me jaiga 
+agar waha bh na mila tw woh sab sa parent constructor pe jaiga jo ke ha Object 
+jo javascript ka apna h  
+
+
+
+
+
+
+Classes
+
+Har language me ek class syntax hota h Jo phly JS me nahi hota tha  ES6 me ya introduce hua tha 
+
+Jese functions me hamain parameter me milta tha Is tarah CLasses me hamain class ke andar ek constructor ke func me milta hain
+
+constructor(customerName, accountNumber, balance = 0) {
+    this.customerName = customerName;
+    this.accountNumber = accountNumber;
+}
+
+classes me hoisting kam nahi krti 
+
+jese function bna ke kahin oper line me call krate hain tw hojate hain is tarah class me nahi hoga 
+
+class declare krne ka bad hee use hogi
+
+
+Function expression---- const hello = function (){}
+Function declaration ---- function hello(){}
+
+class BankAccount {}
+const BankAccoutn = class {}
+
+
+
+
+
+
+
+
+
+Inhertitance
+
+Agar zyada constructors hain or un me bas thora sa hee difference ha or baki chezain common hain 
+Jese kuch properties or methods sab me same hain tw woh har jaga repeat horehe hain jo bad practice h 
+tw hum inheritance use krty hain
+
+child ko parent se inherit krne ke lye child constructor ke start me 
+BankAccount.call(this, customerName, balance)
+ya kreinge ise Constructor linking kehte hian 
+Is se values inherit hojaingii 
+Or agar prototypes inherit krni hain tw child ki prototypes se phly ya kreinge­
+
+
+
+
+
+Encapsulation
+
+hum class se koi bh object bna kr kisi variable me save krain agar or aese value get krein ya change krein tw is sa hamari sari calculation krhrab hojaigi tw hum apne properties ko private rakheinge phir wph bahir se access naho ho sakti or getters or setters banainge access ya update krne ke lye 
+
+const rakeshAccount = new CurrentAccount("Rakesh", 2300);
+rakeshAccount.deposit = 20000 
+
+encapsulation matlab jo constructor ki properties hain use private kreinge or bahir se access nahi krne denge 
+or agar access ya update krna ha tw getters ya settters banainge
+
+
+agar getters or setters without keyword koi method bnainge jese getBalance tw use call krna prega
+
+getters or setters ko child classes se nahi access kr sakte jo variable me object create krwa ke set kraya h us se kr sakty hain 
+
+
+
+
+
+private methods or private properties sirf uski apni main class me access kr sakte hain 
+or child me parent ki pricate properties or methodss nahi access kr sakte 
+private proeprties ko modify ya access krne ke lye getters or setters banatey hain 
+
+agar hum chahte hain ya method sirf class ke andar se access ho sake tw private krdeinge method ko 
+
+agar private properties parent ke public mehtod me set hori hai tw woh child classes me methods use ho skte hain 
+
+
+
+
+
+
+
+Static Properties and Methods
+
+
+Normal methods or properties jo hote hain woh hum instance par call karate hain 
+
+
+const user1 = new User("Mustafa", 22, 5000);
+const user2 = new User("Ahmed", 43, 10000);
+const user3 = new User("Ishaq", 33, 7000);
+const users = [user1, user2, user3];
+
+Jese yahan agar hamain users wali arraay par sorting karani ha tw is ka link user sa tw hai lekin hum instance par call nahi krainge array par 
+tw assi situation me static methods bnateu hain 	
+
+
+Static properties or methods calss ke andar store hote hain un ko instance par call nahi krwate class ka name pe direct call kratey hain 
+
+Instance pe static properties or methods nahi call kerwa sakkte
+
+agar koi configuration h tw use ek class me static propertues me rakh sakte hain 
+
+
+agar 'cache' aik static property hai tw woh this. krke access nahi ho sakti lekin agar same class ke static method ke andar se kar rahey hain tw access ho saktii hai 
+
+
+ek static mehthod common bh bna sakte hain jab bh koi static method call hoga tw woh ek bar cal hoga 
+
+
+
+Summary - static method and properties :-
+
+static properties or methods ko instatnce par call nahi kra sakte class pe direct krate hain 
+Normal properties ko Class pe call nahi kra sakte instance pe karate hain 
+static property this se access nahi hogi Lekin agar Static method ke andar se this krenge tw hojaigi
