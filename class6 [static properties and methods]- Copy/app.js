@@ -1,8 +1,13 @@
 class Config{
-  static dbUser = 'username'
+  static #dbUser = 'username'
   static dbPassword = 'secret '
   static apiToken = 'abcd'
+
+  static get dbUser () {
+    return this.#dbUser
+  }
 }  
+console.log(Config.dbUser)
 
 
 class User {
