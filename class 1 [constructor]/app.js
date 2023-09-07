@@ -10,7 +10,7 @@ function BankAccount({ customerName, balance = 0 }) {
   this.withDraw = (withDrawAmount) => {
     this.balance -= +withDrawAmount;
   };
-}
+} 
 
 // const mustafaAccount = new BankAccount({
 //   customerName: "Mustafa",

@@ -1,4 +1,4 @@
-ProtoTypes
+ProtoTypes	
 
 jab hum new construntorName() sa object bna rehe hain tw this us variable ko point kr raha h jis me object hai 
 or constructor me jo methods hain woh memory har object ke andar le rahe hain
@@ -155,3 +155,39 @@ Summary - static method and properties :-
 static properties or methods ko instatnce par call nahi kra sakte class pe direct krate hain 
 Normal properties ko Class pe call nahi kra sakte instance pe karate hain 
 static property this se access nahi hogi Lekin agar Static method ke andar se this krenge tw hojaigi
+
+
+
+
+
+Polymorphism (method overwriting)
+
+koi bh mehotd ko child class me overwrite krke different krne or phir child class ke instance pe jo method chle ga woh parent wala nahi child class wala hoga 
+is concept ko polymorphesim kehte hain 
+
+
+
+
+
+
+
+
+Abstraction
+
+abstraction me code hide hota h or user ko sirf us ke matlab ki cheez mil rahi hoti h 
+jese idhr Pedro Ja raha h house.addResident() me argument 
+Is se user ko koi mtlb nahi h ya kese create hua is ke andar ki calculation implementations kiya hain
+
+
+let Pedro = new Person("Pedro", 28);
+let house = new House(
+  "House no: R 606 ,Pak kausar town , Malir , Karachi",
+  9000000,
+  []
+);
+house.addResident(Pedro);
+console.log(house.getResidents());
+Pedro.setJob('React Developer')
+
+
+

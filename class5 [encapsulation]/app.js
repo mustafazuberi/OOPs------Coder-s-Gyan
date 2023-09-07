@@ -44,9 +44,7 @@ class CurrentAccount extends BankAccount {
 }
 
 const rakeshAccount = new CurrentAccount("Rakesh", 2300);
-
 rakeshAccount.takeBusinessLoan(22)
-
 console.log(rakeshAccount);
 
 
